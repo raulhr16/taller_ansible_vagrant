@@ -2,8 +2,8 @@ all:
   children:
     servidores:
       hosts:
-        nodo1: 
-          ansible_ssh_host: 
-          ansible_ssh_user:  
-          ansible_ssh_private_key_file: 
+        ansible: 
+          ansible_ssh_host: 172.22.200.42
+          ansible_ssh_user: debian
+          ansible_ssh_private_key_file: /home/raulhr/.ssh/id_rsa
     

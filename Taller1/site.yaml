@@ -5,23 +5,25 @@
     - name: Actualizamos el sistema
       apt: update_cache=yes upgrade=yes
       # Instalar paquetes
-    - name: "Instalar paquetes con apt"
-      apt: # Aquí tienes que poner lo necesario para instalar git y apache2
+    - name: Instalar git y apache2
+      ansible.builtin.apt:
+        name:
+          - git
+          - apache2
       # Copia un fichero a la máquina remota
-    - name: "Copiar fichero a la máquina remota"
+    - name: Copiar fichero a la máquina remota
       copy:
         src: files/foo.conf
-        dest: 
-        owner: root
-        group: root
+        dest: /etc/foo.conf
+        owner: debian
+        group: debian
         mode: '0644'
 
       # Copia un template a un fichero
     - name: "Copiar un tamplate a un fichero de la máquina remota"
-      template: 
+      template:
         src: template/index.j2
-        dest: 
+        dest: /var/www/html/index.html
         owner: www-data
         group: www-data
         mode: 0644
-    
