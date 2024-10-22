@@ -2,13 +2,13 @@ all:
   children:
     servidores_web:
       hosts:
-        nombre_de_la_primera_maquina: 
-          ansible_ssh_host: 
-          ansible_ssh_user: 
-          ansible_ssh_private_key_file:
+        ansible: 
+          ansible_ssh_host: 172.22.200.42
+          ansible_ssh_user: debian
+          ansible_ssh_private_key_file: /home/raulhr/.ssh/id_rsa
     servidores_bd:
       hosts:
-        nombre_de_la_segunda_maquina: 
-          ansible_ssh_host:
-          ansible_ssh_user:
-          ansible_ssh_private_key_file:
+        ansible-taller2: 
+          ansible_ssh_host: 172.22.201.177
+          ansible_ssh_user: debian
+          ansible_ssh_private_key_file: /home/raulhr/.ssh/id_rsa
